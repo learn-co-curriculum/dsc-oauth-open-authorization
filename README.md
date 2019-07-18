@@ -34,7 +34,7 @@ The final step is **acquisition**. This is where we finally receive our **access
 
 This architecture is summarized in the image below:
 
-<img src="images/oa3.png" width="600">
+<img src="images/new_oa3.png" width="600">
 
 Following example shows a scenario where you may want to access a user's Dropbox account for storing photo/media as a part of the service you provide. 
 
@@ -102,3 +102,8 @@ What makes OAuth so special and so effective is that it is a **_Delegated_** aut
 ## Summary
 
 In this lesson, we looked at the OAuth process for gaining access to user-owned resources. We saw how we authorize our apps to access resources with a high level of confidentiality and security that OAuth offers. We looked at an example of how this might work with the Dropbox API and also some extra reading to see more examples of this process. Next, we'll put this into practice by seeing how this process works with the Yelp API.
+
+
+```python
+
+```
