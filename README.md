@@ -4,7 +4,7 @@
 
 ## Introduction
 
-Perhaps the most common thread among all APIs available on the web is the need to **_authenticate_** yourself to prove you are who you say are. This is a major security point for web APIs, and its no surprise that a standard protocol has evolved to help make authenticating users simple and safe. This authentication protocol is called **_OAuth_**, and it provides a simple, easy integration for multi-user applications such as web APIs, so that they can add authentication capabilities to their API is a simple, streamlined way. From our side, this makes life easy because it standardizes the authentication process, so that we don't have to worry about many different authentication protocols for every different service. In this lesson, we'll look into OAuth, learn a little about how it works, and explore the benefits OAuth offers. 
+Perhaps the most common thread among all APIs available on the web is the need to **_authenticate_** yourself to prove you are who you say are. This is a major security point for web APIs, and it's no surprise that a standard protocol has evolved to help make authenticating users simple and safe. This authentication protocol is called **_OAuth_**, and it provides a simple, easy integration for multi-user applications, such as web APIs, so that they can add authentication capabilities to their API in a simple, streamlined way. From our side, this makes life easy because it standardizes the authentication process so that we don't have to worry about many different authentication protocols for every different service. In this lesson, we'll look into OAuth, learn a little about how it works, and explore the benefits OAuth offers. 
 
 
 ## Objectives
@@ -16,7 +16,7 @@ You will be able to:
 
 > **OAuth stands for Open Authorization.**
 
-**_OAuth_** is an open-source protocol created to allow the creators of APIs and other online services to easily let them share private data or assets with users. One of the biggest challenges of building multi-user applications is making sure that you only give people access to the data and functionality they're supposed to have. OAuth provides a framework for allowing authenticated access, but without the risk of having to share the original login credentials such as a password.  The OAuth protocol was created in 2010, and was the brainchild of major tech companies such as Google and Twitter. It's now the most popular open standard for user authentication, is is used by almost all of the the major players in the tech world, such as Netflix, Amazon, Facebook, and more!
+**_OAuth_** is an open-source protocol created to allow the creators of APIs and other online services to easily let them share private data or assets with users. One of the biggest challenges of building multi-user applications is making sure that you only give people access to the data and functionality they're supposed to have. OAuth provides a framework for allowing authenticated access, but without the risk of having to share the original login credentials such as a password.  The OAuth protocol was created in 2010 and was the brainchild of major tech companies such as Google and Twitter. It's now the most popular open standard for user authentication, is used by almost all of the major players in the tech world, such as Netflix, Amazon, Facebook, and more!
 
 ### The Steps of OAuth
 
@@ -27,16 +27,16 @@ Prior to using OAuth, we must also register our application with the authorizer 
 After registration, The first step is the **authorization**. Here, we send our users to the authorization server to ask for some permissions with our scope (permissions) that we would like to have. The user can see everything being requested on his behalf and confirm that they would like to grant our application access for those permissions.
 
  
-The second step is the **redirect**. Redirect URI are a critical part of the OAuth flow. After a user successfully authorizes their application, the authorization server then redirects the user back to app with an **authorization code** in the URL. Because the redirect URL will contain sensitive information, it is critical that the service doesn’t redirect the user to arbitrary locations. The authorization code is used by our application in the final act of getting the access token. 
+The second step is the **redirect**. Redirect URIs are a critical part of the OAuth flow. After a user successfully authorizes their application, the authorization server then redirects the user back to the app with an **authorization code** in the URL. Because the redirect URL will contain sensitive information, it is critical that the service doesn’t redirect the user to arbitrary locations. The authorization code is used by our application in the final act of getting the access token. 
 
 
-The final step is **acquisition**. This is where we finally receive our **access token** from service provider so we can process API requests for our user. We use the authorization code we received in the redirect to our redirect url and our own application secret (which is acquired during initial registration) in order to get our user’s access token. The access token can then be used to make API calls on behalf of our user.
+The final step is **acquisition**. This is where we finally receive our **access token** from the service provider so we can process API requests for our user. We use the authorization code we received in the redirect to our redirect url and our own application secret (which is acquired during initial registration) in order to get our user’s access token. The access token can then be used to make API calls on behalf of our user.
 
 This architecture is summarized in the image below:
 
 <img src="images/new_oa3.png" width="600">
 
-Following example shows a scenario where you may want to access a user's Dropbox account for storing photo/media as a part of the service you provide. 
+The following example shows a scenario where you may want to access a user's Dropbox account for storing photo/media as a part of the service you provide. 
 
 
 ## OAuth with DropBox for Single-Sign-On (SSO)
@@ -54,7 +54,7 @@ In order for our app to access our users' Dropbox accounts, the following steps 
 1. A user must authenticate with Dropbox, verifying their identity. 
 2. The user must explicitly give app permission to access their Dropbox (you've probably seen these sorts of popups before when connecting apps to one another on your phone).
 
-One quick techincal note: Dropbox (and most other online services) actually use **OAuth 2** specifications. [Details on OAuth2 can be viewed at the official website](https://oauth.net/2/). In practice, most people just call it OAuth for short, but there is technically a difference between OAuth and OAuth 2 in terms of how they work and what they can do. 
+One quick technical note: Dropbox (and most other online services) actually use **OAuth 2** specifications. [Details on OAuth2 can be viewed at the official website](https://oauth.net/2/). In practice, most people just call it OAuth for short, but there is technically a difference between OAuth and OAuth 2 in terms of how they work and what they can do. 
 
 Once the user has completed signing in and verifying permissions, the OAuth process returns an **_Access Token_** to our application. 
 
@@ -63,7 +63,7 @@ each subsequent API request to uniquely identify both the app and the  user.**
 
 You can think of an access token as a secret code that identifies our HTTP requests as coming from the actual user that has signed in and authenticated themselves. 
 
-For the remainder of this lesson, we'll borrow some example graphics and explanations from Dropbox's amazing [OAuth Guide](https://www.dropbox.com/developers/reference/oauth-guide), which provides a detailed explanation of exactly how OAuth works with Dropbox. We're only interested in the broad strokes of this as an example of how it all works, but if you have time, take a look at the full guide--it's quite informative, and very easy to understand! 
+For the remainder of this lesson, we'll borrow some example graphics and explanations from Dropbox's amazing [OAuth Guide](https://www.dropbox.com/developers/reference/oauth-guide), which provides a detailed explanation of exactly how OAuth works with Dropbox. We're only interested in the broad strokes of this as an example of how it all works, but if you have time, take a look at the full guide--it's quite informative and very easy to understand! 
 
 Have a look at an example scenario for an Image/gallery app that wants to access its users' Dropbox accounts for accessing or storing new images.
 
@@ -79,9 +79,9 @@ If you've used SSO features before or connected apps to other apps on your smart
 
 2. The User signs in, and explicitly provides permissions to the application or game to connect to their account--in our example, this would mean giving the Photo Gallery app on our Macbook explicit permission to access our Dropbox account. 
 
-3. The user is given an access code, and redirected back to the original application. The application then signs in, and exchanges the access code for a more permanent **_Access Token_** that it can store for all subsequent connections to the service that it has authenticated with--this is the reason why our 3rd party apps can stay signed in and connected with things like our Facebook or Dropbox accounts, so that we don't have to reauthenticate every time we sign into the app!
+3. The user is given an access code and redirected back to the original application. The application then signs in, and exchanges the access code for a more permanent **_Access Token_** that it can store for all subsequent connections to the service that it has authenticated with--this is the reason why our 3rd party apps can stay signed in and connected with things like our Facebook or Dropbox accounts, so that we don't have to reauthenticate every time we sign into the app!
 
-Note that this request to exchange the authorization code for an access token takes places behind-the-scenes with a call to the /token API endpoint and is not visible to your end users. This setup is shown in the image below, which comes from the Dropbox OAuth Guide linked above.
+Note that this request to exchange the authorization code for an access token takes place behind-the-scenes with a call to the /token API endpoint and is not visible to your end users. This setup is shown in the image below, which comes from the Dropbox OAuth Guide linked above.
 
 <img src="images/oa2.png" width="600">
 
@@ -102,8 +102,3 @@ What makes OAuth so special and so effective is that it is a **_Delegated_** aut
 ## Summary
 
 In this lesson, we looked at the OAuth process for gaining access to user-owned resources. We saw how we authorize our apps to access resources with a high level of confidentiality and security that OAuth offers. We looked at an example of how this might work with the Dropbox API and also some extra reading to see more examples of this process. Next, we'll put this into practice by seeing how this process works with the Yelp API.
-
-
-```python
-
-```
