@@ -10,7 +10,7 @@ Perhaps the most common thread among all APIs available on the web is the need t
 ## Objectives
 You will be able to:
 
-* Understand and explain the role OAuth plays when working with a 3rd Party API
+* Explain the role OAuth plays when working with a 3rd party API
 
 ## What is OAuth?
 
