@@ -1,5 +1,3 @@
-
-
 # OAuth - Open Authorization
 
 ## Introduction
@@ -34,7 +32,7 @@ The final step is **acquisition**. This is where we finally receive our **access
 
 This architecture is summarized in the image below:
 
-<img src="images/new_oa3.png" width="600">
+<img src="https://curriculum-content.s3.amazonaws.com/data-science/images/new_oa3.png" width="600">
 
 The following example shows a scenario where you may want to access a user's Dropbox account for storing photo/media as a part of the service you provide. 
 
@@ -67,7 +65,7 @@ For the remainder of this lesson, we'll borrow some example graphics and explana
 
 Have a look at an example scenario for an Image/gallery app that wants to access its users' Dropbox accounts for accessing or storing new images.
 
-<img src="images/oa1.png" width="600">
+<img src="https://curriculum-content.s3.amazonaws.com/data-science/images/oa1.png" width="600">
 
 The key benefit of this approach is that our app doesn't need to store or transmit the user's Dropbox password. The user will be redirected to Dropbox to authorize our app to access their Dropbox data. After the user has approved our app, they'll be sent back to the app with an authorization code. At this point, our app will exchange the authorization code for an access token which can be used to make subsequent requests to the Dropbox API for downloading/uploading contents, etc. OAuth also allows the user to authorize only a limited set of permissions and the user may choose to stop access at any time. This makes OAuth a safer and more secure form of API authorization for end users.
 
@@ -83,7 +81,7 @@ If you've used SSO features before or connected apps to other apps on your smart
 
 Note that this request to exchange the authorization code for an access token takes place behind-the-scenes with a call to the /token API endpoint and is not visible to your end users. This setup is shown in the image below, which comes from the Dropbox OAuth Guide linked above.
 
-<img src="images/oa2.png" width="600">
+<img src="https://curriculum-content.s3.amazonaws.com/data-science/images/oa2.png" width="600">
 
 ## The Benefits of Using OAuth
 
